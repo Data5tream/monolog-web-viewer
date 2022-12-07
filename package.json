@@ -6,10 +6,12 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "deploy": "pnpm run build --base=/monolog-web-viewer/ && gh-pages -d dist"
   },
   "devDependencies": {
     "@sveltejs/vite-plugin-svelte": "^1.1.0",
+    "gh-pages": "^4.0.0",
     "sass": "^1.56.1",
     "svelte": "^3.52.0",
     "svelte-preprocess": "^4.10.7",
