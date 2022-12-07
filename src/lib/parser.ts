@@ -1,4 +1,4 @@
-import { components, logData, rawData } from './store';
+import { components, levels, logData, rawData } from './store';
 import { get } from 'svelte/store';
 
 export interface LogEntry {
@@ -26,6 +26,7 @@ export const parseLog = (txt: string) => {
 
   const log: Array<LogEntry> = [];
   const comps = [];
+  const lvls = [];
 
   txt.split('\n').forEach(entry => {
     let m;
@@ -44,10 +45,12 @@ export const parseLog = (txt: string) => {
         context: m[5],
       });
       comps.push(m[2]);
+      lvls.push(m[3]);
     }
   });
 
   components.set([...new Set(comps)].map(name => ({ name, active: true })));
+  levels.set([...new Set(lvls)].map(name => ({ name, active: true })));
 
   rawData.set(log);
   logData.set(log);
@@ -59,12 +62,14 @@ export const parseLog = (txt: string) => {
  */
 export const updateFilteredData = () => {
   // Get an array with the names of currently active filters
-  const activeComponents: Array<string> = get(components)
-    .filter((comp) => comp.active)
-    .map(comp => comp.name);
+  const getActiveFilterNames = (filters) => filters.filter((f) => f.active).map((f) => f.name);
+
+  const activeComponents: Array<string> = getActiveFilterNames(get(components));
+  const activeLevels: Array<string> = getActiveFilterNames(get(levels));
 
   // Only include data from active filters
-  const filteredLogs = get(rawData).filter((entry) => activeComponents.includes(entry.component));
+  const filteredLogs = get(rawData).filter((entry) =>
+    activeComponents.includes(entry.component) && activeLevels.includes(entry.level));
 
   logData.set(filteredLogs);
 };
@@ -73,19 +78,26 @@ export const updateFilteredData = () => {
 /**
  * Update the components filter store
  *
+ * @param {string} filter
  * @param {string} name
  * @param {boolean} active
  */
-export const setFilter = (name: string, active: boolean) => {
-  components.update(comps => {
-    let newComps = [];
-    comps.forEach(comp => {
-      if (comp.name === name) {
-        comp.active = active;
+export const setFilter = (filter: string, name: string, active: boolean) => {
+  const updateFilter = (filters) => {
+    let newFilters = [];
+    filters.forEach(filter => {
+      if (filter.name === name) {
+        filter.active = active;
       }
-      newComps.push(comp);
+      newFilters.push(filter);
     });
 
-    return newComps;
-  });
+    return newFilters;
+  }
+
+  if (filter === 'components') {
+    components.update(updateFilter);
+  } else if (filter === 'levels') {
+    levels.update(updateFilter);
+  }
 };

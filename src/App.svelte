@@ -9,15 +9,13 @@
   let data = [];
 
   logData.subscribe((val) => {
-    if (val.length) {
-      data = val;
-      fileLoaded = true;
-    }
+    data = val;
+    fileLoaded = true;
   });
 </script>
 
 <main>
-     <Filters/>
+    <Filters/>
     {#if fileLoaded}
         <LogViewer {data}/>
     {:else}

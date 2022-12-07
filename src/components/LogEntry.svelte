@@ -3,7 +3,7 @@
     <LogEntryField classList="level-{logEntry.level.toLowerCase()}" value="{logEntry.level}"/>
     <LogEntryField classList="component" value="{logEntry.component}"/>
     <LogEntryField classList="message" value="{shortMsg(logEntry.message)}"/>
-    <LogEntryField value="{logEntry.context}"/>
+    <LogEntryField classList="context" value="{logEntry.context}"/>
 </tr>
 
 <script lang="ts">

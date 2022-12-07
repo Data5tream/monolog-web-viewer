@@ -1,12 +1,13 @@
 <script lang="ts">
   import { setFilter, updateFilteredData } from '../lib/parser';
 
+  export let filter;
   export let color = 'normal';
   export let title = '';
   export let active = false;
 
   const updateFilter = () => {
-    setFilter(title, !active);
+    setFilter(filter, title, !active);
     updateFilteredData();
   };
 </script>
