@@ -1,4 +1,6 @@
-interface LogEntry {
+import { logData } from './store';
+
+export interface LogEntry {
     timestamp: number,
     component: string,
     level: string,
@@ -11,9 +13,8 @@ interface LogEntry {
  * Parse a monolog log file
  *
  * @param {string} txt
- * @return {Array<LogEntry>}
  */
-export const parseLog = (txt: string): Array<LogEntry> => {
+export const parseLog = (txt: string) => {
     const regex = /\[(\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}\.\d+\+\d{2}:\d{2})]\W(\w+)\.(\w+):\W(.*)\[(.*)]/gm;
 
     const log: Array<LogEntry> = [];
@@ -37,5 +38,5 @@ export const parseLog = (txt: string): Array<LogEntry> => {
         }
     })
 
-    return log;
+    logData.set(log);
 }

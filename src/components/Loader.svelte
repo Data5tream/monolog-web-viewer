@@ -4,7 +4,7 @@
  let files: Array<File>;
 
  const loadFileContent = async (file: File) => {
-   console.log(parseLog(await file.text()));
+   parseLog(await file.text());
  }
 
  $: if (files) {
