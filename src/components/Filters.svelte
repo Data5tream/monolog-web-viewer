@@ -26,11 +26,11 @@
 
 <style lang="scss">
     .tag-container {
-      margin: 0 16px 8px;
+      margin: 0 0 16px;
 
       & > div:not(:first-child) {
-        border-left: 2px solid #ccc;
-        padding: 4px 8px;
+        border-left: 1px solid #ccc;
+        padding: 0 12px;
       }
     }
 
