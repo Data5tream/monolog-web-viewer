@@ -1,7 +1,7 @@
 <script lang="ts">
-    import LogEntry from './LogEntry.svelte';
+  import LogEntry from './LogEntry.svelte';
 
-    export let data;
+  export let data;
 </script>
 
 <table>
@@ -20,3 +20,9 @@
     {/each}
     </tbody>
 </table>
+
+<style>
+    table {
+        width: 100%;
+    }
+</style>

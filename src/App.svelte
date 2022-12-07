@@ -17,10 +17,10 @@
 </script>
 
 <main>
-  <Filters/>
-  {#if fileLoaded}
-    <LogViewer {data}/>
-  {:else}
-    <Loader/>
-  {/if}
+     <Filters/>
+    {#if fileLoaded}
+        <LogViewer {data}/>
+    {:else}
+        <Loader/>
+    {/if}
 </main>
