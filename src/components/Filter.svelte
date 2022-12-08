@@ -35,4 +35,18 @@
   .text-normal {
     color: #eee;
   }
+
+  @media (prefers-color-scheme: light) {
+    .pill {
+      background: #ddd;
+
+      &:not(.active) {
+        filter: brightness(0.8);
+      }
+    }
+
+    .text-normal {
+      color: #333;
+    }
+  }
 </style>
