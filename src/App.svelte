@@ -2,8 +2,8 @@
   import { logData, rawData } from './lib/store';
 
   import LogViewer from './components/LogViewer/LogViewer.svelte';
-  import Loader from './components/Loader.svelte';
-  import Filters from './components/Filters.svelte';
+  import LogLoader from './components/LogLoader.svelte';
+  import Header from './components/Header.svelte';
   import Footer from './components/Footer.svelte';
 
   let fileLoaded = false;
@@ -19,20 +19,12 @@
   });
 </script>
 
-<header>
-    <Filters/>
-</header>
+<Header/>
 <main>
     {#if fileLoaded}
         <LogViewer {data}/>
     {:else}
-        <Loader/>
+        <LogLoader/>
     {/if}
 </main>
 <Footer/>
-
-<style>
-  header {
-    padding: 8px 16px;
-  }
-</style>

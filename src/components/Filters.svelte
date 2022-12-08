@@ -1,6 +1,6 @@
 <script lang="ts">
   import { components, levels } from '../lib/store';
-  import Filter from './Filter.svelte';
+  import Filter from './FilterPill.svelte';
 
   let comps = [];
   components.subscribe((val) => comps = val);
