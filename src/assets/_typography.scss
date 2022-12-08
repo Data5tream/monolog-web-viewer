@@ -1,0 +1,49 @@
+.text {
+  &-info {
+    color: #4DD0E1; // Cyan 300
+  }
+
+  &-debug {
+    color: #64B5F6;  // Blue 300
+  }
+
+  &-critical {
+    color: #F44336; // Red 500
+  }
+
+  &-error {
+    color: #FF5722; // Deep Orange 500
+  }
+
+  &-warning {
+    color: #FFA000; // Amber 300
+  }
+
+  &-muted {
+    color: #888;
+  }
+}
+
+@media (prefers-color-scheme: light) {
+  .text {
+    &-info {
+      color: #0097A7; // Cyan 700
+    }
+
+    &-debug {
+      color: #1976D2;  // Blue 700
+    }
+
+    &-critical {
+      color: #D32F2F; // Red 700
+    }
+
+    &-error {
+      color: #E64A19; // Deep Orange 700
+    }
+
+    &-warning {
+      color: #FFA000; // Amber 700
+    }
+  }
+}

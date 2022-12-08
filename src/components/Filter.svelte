@@ -12,7 +12,7 @@
   };
 </script>
 
-<button class="pill {color}" class:active on:click={updateFilter}>
+<button class="pill text-{color}" class:active on:click={updateFilter}>
     <span>{title}</span>
 </button>
 
@@ -24,14 +24,15 @@
     border: 0;
     align-items: center;
     cursor: pointer;
+
+    background: #2b2a33;
+
+    &:not(.active) {
+      filter: brightness(0.5);
+    }
   }
 
-  .normal {
-    background: #333;
-    color: #fff;
-
-    &.active {
-      background: #555;
-    }
+  .text-normal {
+    color: #eee;
   }
 </style>
