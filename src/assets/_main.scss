@@ -1,3 +1,5 @@
+@use '_typography';
+
 :root {
   font-size: 16px;
   line-height: 24px;
@@ -25,4 +27,18 @@ html, body {
   display: grid;
   height: 100vh;
   grid-template-rows: auto 1fr auto;
+}
+
+.content-row {
+  display: grid;
+  width: calc(100% - 32px);
+  grid-template-columns: 194px 72px 160px 1fr 64px;
+  gap: 16px
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: rgba(0, 0, 0, 0.87);
+    background-color: #fefefe;
+  }
 }
