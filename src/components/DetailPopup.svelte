@@ -12,7 +12,15 @@
   const hidePopup = () => {
     popup.set({ isVisible: false, logEntry: undefined });
   };
+
+  const handleKeydown = (ev) => {
+    if (isVisible && ev.key === 'Escape') {
+      hidePopup();
+    }
+  }
 </script>
+
+<svelte:window on:keydown={handleKeydown}/>
 
 {#if isVisible}
     <div class="overlay" on:click|self={hidePopup}>
