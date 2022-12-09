@@ -172,5 +172,6 @@
     .item-wrapper {
         display: grid;
         grid-template-columns: auto minmax(90px, auto) minmax(128px, auto) 1fr auto;
+        gap: 2px 0;
     }
 </style>

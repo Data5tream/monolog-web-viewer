@@ -11,7 +11,7 @@
 {#if data.length}
     <div class="container" bind:clientHeight={h}>
         <div class="inner">
-            <LogEntries {height} items={data} itemHeight={24}/>
+            <LogEntries {height} items={data} itemHeight={26}/>
         </div>
     </div>
 {:else}

@@ -30,6 +30,9 @@
   }
 
   .message {
-    font-size: 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
   }
 </style>
