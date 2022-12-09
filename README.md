@@ -9,14 +9,4 @@ pnpm run dev
 
 ## ToDo
 
-Stuff that needs to be done (not necessarily in this order)
-
-- [x] Virtual list
-- [ ] Loading component
-- [ ] Message details
-- [ ] Context details
-- [ ] Message search
-- [ ] Timestamp filter
-- [ ] Styling
-- [ ] Don't hardcode cell widths
-- [ ] Write own virtual list
+Project is planned through GitHub issues. A lot of base features are currently missing (like a search).
