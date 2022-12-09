@@ -6,12 +6,8 @@ specifiers:
   sass: ^1.56.1
   svelte: ^3.52.0
   svelte-preprocess: ^4.10.7
-  svelte-virtual-list-ce: 3.1.0-beta.2
   typescript: ^4.9.3
   vite: ^3.2.3
-
-dependencies:
-  svelte-virtual-list-ce: 3.1.0-beta.2
 
 devDependencies:
   '@sveltejs/vite-plugin-svelte': 1.4.0_svelte@3.54.0+vite@3.2.5
@@ -881,10 +877,6 @@ packages:
       svelte: 3.54.0
       typescript: 4.9.3
     dev: true
-
-  /svelte-virtual-list-ce/3.1.0-beta.2:
-    resolution: {integrity: sha512-uS8BUtEglj5I18FMUtFjdSKKYSBD2DaSQ1PAiHMl8poo0m0qSjJZZm0C0bgY0w8/5le4fdDez9XvsgP8+r44Yg==}
-    dev: false
 
   /svelte/3.54.0:
     resolution: {integrity: sha512-tdrgeJU0hob0ZWAMoKXkhcxXA7dpTg6lZGxUeko5YqvPdJBiyRspGsCwV27kIrbrqPP2WUoSV9ca0gnLlw8YzQ==}
