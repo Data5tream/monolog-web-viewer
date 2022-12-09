@@ -19,7 +19,7 @@
   });
 </script>
 
-<Header/>
+<Header {fileLoaded}/>
 <main>
     {#if fileLoaded}
         <LogViewer {data}/>

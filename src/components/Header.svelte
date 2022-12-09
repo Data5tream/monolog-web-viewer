@@ -1,9 +1,15 @@
 <script lang="ts">
   import Filters from './Filters.svelte';
+
+  export let fileLoaded;
 </script>
 
 <header>
-    <Filters/>
+    {#if fileLoaded}
+        <Filters/>
+    {:else}
+        <span>Select a file below to display logs</span>
+    {/if}
 </header>
 
 <style>
