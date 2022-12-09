@@ -5,6 +5,7 @@
   import LogLoader from './components/LogLoader.svelte';
   import Header from './components/Header.svelte';
   import Footer from './components/Footer.svelte';
+  import DetailPopup from './components/DetailPopup.svelte';
 
   let fileLoaded = false;
   let data = [];
@@ -19,7 +20,7 @@
   });
 </script>
 
-<Header/>
+<Header {fileLoaded}/>
 <main>
     {#if fileLoaded}
         <LogViewer {data}/>
@@ -28,3 +29,5 @@
     {/if}
 </main>
 <Footer/>
+
+<DetailPopup/>

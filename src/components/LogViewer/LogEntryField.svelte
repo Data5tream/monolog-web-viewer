@@ -1,9 +1,17 @@
 <script lang="ts">
+  import { createEventDispatcher } from 'svelte';
+
+  const dispatch = createEventDispatcher();
+
   export let classList;
   export let value;
+
+  const click = () => {
+    dispatch('click', {});
+  }
 </script>
 
-<div class="log-entry-field {classList}">
+<div class="log-entry-field {classList}" on:click={click}>
     {#if value}
         {value}
     {:else}
@@ -12,8 +20,9 @@
 </div>
 
 <style lang="scss">
-  div {
-    padding: 0 8px;
+  .log-entry-field {
+    padding: 2px 8px;
+    transition: background 0.2s ease-in-out;
   }
 
   .timestamp {
@@ -30,6 +39,14 @@
   }
 
   .message {
-    font-size: 0.8em;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    font-size: 0.9em;
+    cursor: pointer;
+
+    &:hover {
+      background: #333;
+    }
   }
 </style>
