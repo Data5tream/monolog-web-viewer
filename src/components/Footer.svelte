@@ -1,14 +1,15 @@
 <footer>
     <span>&copy; Simon Barth, 2022</span>
     <a href="https://github.com/Data5tream/monolog-web-viewer" target="_blank" rel="noreferrer">Github</a>
-    <span>Licensed under GNU AGPLv3</span>
 </footer>
 
 <style lang="scss">
   footer {
     color: #ccc;
     background: #111;
-    padding: 12px 16px;
+    padding: 8px 16px;
+
+    font-size: 14px;
 
     & > * {
       padding: 0 8px;
