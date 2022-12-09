@@ -11,13 +11,13 @@
 
 <div class="tag-container">
     <div class="components">
-        <label>Components</label>
+        <div>Components</div>
         {#each comps as comp}
             <Filter filter="components" title={comp.name} active={comp.active}/>
         {/each}
     </div>
     <div class="levels">
-        <label>Levels</label>
+        <div>Levels</div>
         {#each lvls as lvl}
             <Filter filter="levels" title={lvl.name} active={lvl.active} color={lvl.name.toLowerCase()} />
         {/each}
@@ -30,7 +30,8 @@
 
     & > div:not(:first-child) {
       border-left: 1px solid #ccc;
-      padding: 0 12px;
+      margin-left: 8px;
+      padding: 0 16px 0 14px;
     }
   }
 

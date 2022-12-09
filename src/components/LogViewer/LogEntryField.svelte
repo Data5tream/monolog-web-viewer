@@ -3,16 +3,16 @@
   export let value;
 </script>
 
-<td class="{classList}">
+<div class="log-entry-field {classList}">
     {#if value}
         {value}
     {:else}
         <span class="text-muted">None</span>
     {/if}
-</td>
+</div>
 
 <style lang="scss">
-  td {
+  div {
     padding: 0 8px;
   }
 
